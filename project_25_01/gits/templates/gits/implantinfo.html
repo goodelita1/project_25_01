@@ -1,0 +1,18 @@
+{% extends 'gits/layout.html' %}
+
+{% block title %}
+implantinfo
+{% endblock %}
+
+{% block content %}<form action="/implantinfo/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+    <br>
+    <a href="http://127.0.0.1:8000/hashinfo/">hashinfo</a>
+    <br>
+    {% for i in data %}
+    {{i.implant_name}} {{i.buy_possibility}} {{i.strange_type}} {{i.defense}}
+    <br>
+    {% endfor %}
+</form>{% endblock %}

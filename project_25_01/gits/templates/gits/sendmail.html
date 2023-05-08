@@ -1,0 +1,12 @@
+{% extends 'gits/layout.html' %}
+
+{% block title %}
+implantinfo
+{% endblock %}
+
+{% block content %}<form action="/sendmail/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+    <br>
+</form>{% endblock %}

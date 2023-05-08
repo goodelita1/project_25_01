@@ -1,0 +1,17 @@
+{% extends 'gits/layout.html' %}
+
+{% block title %}
+implantinfo
+{% endblock %}
+
+{% block content %}<form action="/implantinfo/" method="post">
+    {% csrf_token %}
+    <br>
+    <a href="http://127.0.0.1:8000/hashinfo/">hashinfo</a>
+    <br>
+    <a href="http://127.0.0.1:8000/implantinfo/">implantinfo</a>
+    <br>
+    <a href="http://127.0.0.1:8000/sendmail/">sendmail</a>
+    <br>
+
+</form>{% endblock %}

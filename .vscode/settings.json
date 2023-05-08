@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./project_25_01/project_25_01"
+    ]
+}
