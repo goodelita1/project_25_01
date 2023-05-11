@@ -5,14 +5,13 @@ name = "pypi"
 
 [packages]
 celery = "*"
-black = "*"
-flack8 = "*"
-redis = "*"
+django = "*"
 django-debug-toolbar = "*"
-isort = "*"
-flower = "*"
-psycopg2-binary = "*"    
-
+django-celery-results = "*"
+beautifulsoup4 = "*"
+requests = "*"
+redis = "*"
+django-celery-beat = "*"
 
 [dev-packages]
 
