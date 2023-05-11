@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
     path('', include('gits.urls', namespace='gits')),
+    path('', include('scrap_soup.urls', namespace='scrap_soup')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

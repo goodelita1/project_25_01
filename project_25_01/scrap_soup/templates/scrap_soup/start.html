@@ -1,0 +1,11 @@
+{% extends 'gits/layout.html' %}
+
+{% block title %}
+start scraping
+{% endblock %}
+
+{% block content %}<form action="/start/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>{% endblock %}

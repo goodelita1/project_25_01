@@ -1,6 +1,8 @@
+from datetime import timedelta
 import os
 
 from celery import Celery
+from celery.schedules import crontab
 
 # Set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project_25_01.settings')
@@ -15,6 +17,15 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 
 # Load task modules from all registered Django apps.
 app.autodiscover_tasks()
+
+app.conf.beat_schedule = {
+    # every 1 min
+    'add-every-minute': {
+        'task': 'scrap_soup.tasks.bs_scraping',
+        # 'schedule': timedelta(seconds=30)
+        'schedule': crontab(minute='*'),
+    },
+}
 
 
 @app.task(bind=True)
